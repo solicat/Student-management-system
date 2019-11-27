@@ -13,7 +13,7 @@ import pd.management.Administrator;
 import pd.student_data.Student;
 
 public class Account_data {
-	private ArrayList<Account> account;
+	private static ArrayList<Account> account;
 	
 	public void openAccount(){
 		try {
@@ -76,20 +76,17 @@ public class Account_data {
 		
 	}
 	
-	public int tryLogin(String id, String pw) {
+	public static int tryLogin(String id, String pw) {
 		for(Account a : account) {
 			if(a.getID().equals(id) && a.getPW().equals(pw)){
 				if(a.getUser() instanceof Student) {
-					System.out.println("Student Login");
-					return 1;
+					return 1;	// Student login
 				}
 				if(a.getUser() instanceof Administrator) {
-					System.out.println("Administrator Login");
-					return 2;
+					return 2;	// Administrator login
 				}
 			}
 		}
-		System.out.println("Login Fail");
-		return 0;
+		return 0;	// Login fail
 	}
 }
