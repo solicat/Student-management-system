@@ -1,4 +1,4 @@
-package management;
+package pd.management;
 
 import java.io.Serializable;
 
