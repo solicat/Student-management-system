@@ -1,7 +1,10 @@
 
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+
 import dm.Account_data;
+import hci.login.login;
 
 public class Main {
 
@@ -29,14 +32,8 @@ public class Main {
 		Account_data account = new Account_data();
 		account.openAccount();
 		
-		System.out.print("ID: ");
-		String id = kb.next();
-		System.out.print("PW: ");
-		String pw = kb.next();		
-		
-		System.out.println(account.tryLogin(id,  pw));		
-				
-		System.exit(0);
+		login loginGui = new login();
+		loginGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		loginGui.setVisible(true);		
 	}
-
 }

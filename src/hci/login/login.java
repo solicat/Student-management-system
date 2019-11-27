@@ -1,14 +1,11 @@
-package Login;
+package hci.login;
 
-import management.*;
-import student_data.*;
-import Login.Failure;
-
-import java.io.*;
-import java.util.ArrayList;
+import hci.login.Failure;
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
+
+import dm.Account_data;
 
 public class login extends JFrame implements ActionListener
 {
@@ -19,25 +16,12 @@ public class login extends JFrame implements ActionListener
 	
 	private JTextField ID;
 	private JTextField PW;
-	
-	ArrayList<Account>faccount;
-	
-	public static void main(String[] args) {
-		login loginGui = new login();
-		loginGui.setVisible(true);
-	}
 
 	public login() {
-		
-	}
-	
-	public login(ArrayList<Account> Faccount) {
 		super("Login");
 		setLayout(new GridLayout(4, 1));
 		setSize(WIDTH, HEIGHT);
-		
-		faccount = Faccount;
-		
+				
 		JPanel titlePanel = new JPanel();
 		//titlePanel.setLayout(new BorderLayout());
 		JLabel titleLabel = new JLabel("학생경력관리시스템");
@@ -79,69 +63,24 @@ public class login extends JFrame implements ActionListener
 		JButton LoginButton = new JButton("로그인");
 		LoginButton.addActionListener(this);
 		buttonPanel.add(LoginButton);
-		add(buttonPanel);
-		
-		
-		/*Make Example Account*/
-		
+		add(buttonPanel);		
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		String inputID = ID.getText();
 		String inputPW = PW.getText();
-		tryLogin(inputID, inputPW);
-			
-		/*If student
-		 * Instance Code below : ID == 0 -> student
-		 */
-		//if(stringToInteger(inputID) == 0) {
-		//	System.out.println("You are a Student!\n");
-			/*Open student window*/
-		//}
-		/*If Manager
-		 * Instance Code below : ID == 1 -> manager
-		 */
-		//else if(stringToInteger(inputID) == 1) {
-		//	System.out.println("You are a Manager!\n");
-			/*Open manager window*/
-		//}
-		/*No account*/
-		//else {
-			/*Open login failure window*/
-		//	Failure failureGui = new Failure();
-		//	failureGui.setVisible(true);
-		//}
-	}
-	
-	public void tryLogin(String id, String pw) {
-		int success = 0;
-		do {
-			/*System.out.print("ID: ");
-			String id = kb.next();
-			System.out.print("PW: ");
-			String pw = kb.next();	*/			
-			
-			for(Account i : faccount)
-			{
-				if(i.getID().equals(id) && i.getPW().equals(pw))
-				{
-					success = 1;
-					System.out.println(i.getUser());
-					break;
-				}
-			}
-			if(success == 0) {
-				/*Open login failure window*/
-					Failure failureGui = new Failure();
-					failureGui.setVisible(true);
-					break;
-			}
-		}while(success != 1);
+		int result = Account_data.tryLogin(inputID, inputPW);
 		
-		System.out.println("Login success");
-	}
-	
-	private static int stringToInteger(String StringObject) {
-		return Integer.parseInt(StringObject.trim());
+		if(result == 0) {
+			System.out.println("Login Fail");
+			Failure failureGui = new Failure();
+			failureGui.setVisible(true);
+		}
+		else if(result == 1) {
+			System.out.println("You are a student!");
+		}
+		else if(result == 2) {
+			System.out.println("You are a Administrator!");
+		}
 	}
 }

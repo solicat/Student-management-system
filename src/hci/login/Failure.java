@@ -1,7 +1,6 @@
-package Login;
-import java.io.*;
+package hci.login;
+
 import java.awt.event.*;
-import java.awt.*;
 import javax.swing.*;
 
 public class Failure extends JFrame implements ActionListener{
@@ -18,5 +17,11 @@ public class Failure extends JFrame implements ActionListener{
 		failurePanel.add(failureLabel);
 		failurePanel.add(failureLabel2);
 		add(failurePanel);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
