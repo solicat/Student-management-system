@@ -1,17 +1,17 @@
 package management;
 
-import student_data.Student;
+import java.io.Serializable;
 
-public class Account {
+public class Account implements Serializable{
 	private String ID;
 	private String PW;
-	private Student student;
+	private User user ;
 		
-	public Account(String iD, String pW, Student student) {
+	public Account(String iD, String pW, User user) {
 		super();
 		ID = iD;
 		PW = pW;
-		this.student = student;
+		this.user = user;
 	}
 	public String getID() {
 		return ID;
@@ -25,11 +25,11 @@ public class Account {
 	public void setPW(String pW) {
 		PW = pW;
 	}
-	public Student getStudent() {
-		return student;
+	public User getUser() {
+		return user;
 	}
-	public void setStudent(Student student) {
-		this.student = student;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 	

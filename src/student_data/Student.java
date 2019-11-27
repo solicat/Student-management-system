@@ -1,5 +1,7 @@
 package student_data;
 
-public class Student {
+import management.User;
 
+public class Student extends User{
+	
 }
