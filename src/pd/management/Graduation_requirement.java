@@ -1,17 +1,19 @@
 package pd.management;
 
-public class Graduation_requirement {
+import java.util.ArrayList;
+
+public class Graduation_requirement<Require> {
 
 	private int eng_grade;
 	private int foreign_required_credit;
-	private String[] required_subject;
+	private ArrayList<Require> required_subject;
 	private int intern_credit;
 	private int counseling;
 	private String course;
 	private String track;
 	private int admission_year;
 	
-	public Graduation_requirement(int eng_grade, int foreign_required_credit, String[] required_subject,
+	public Graduation_requirement(int eng_grade, int foreign_required_credit, ArrayList<Require> required_subject,
 			int intern_credit, int counseling, String course, String track, int admission_year) 
 	{
 		super();
@@ -27,7 +29,7 @@ public class Graduation_requirement {
 	
 	public int getEng_grade() {return eng_grade;}
 	public int getForeign_required_credit() {return foreign_required_credit;}
-	public String[] getRequired_subject() {return required_subject;}
+	public ArrayList<Require> getRequired_subject() {return required_subject;}
 	public int getIntern_credit() {return intern_credit;}
 	public int getCounseling() {return counseling;}
 	public String getCourse() {return course;}
@@ -35,7 +37,7 @@ public class Graduation_requirement {
 	public int getAdmission_year() {return admission_year;}
 	public void setEng_grade(int eng_grade) {this.eng_grade = eng_grade;}
 	public void setForeign_required_credit(int foreign_required_credit) {this.foreign_required_credit = foreign_required_credit;}
-	public void setRequired_subject(String[] required_subject) {this.required_subject = required_subject;}
+	public void setRequired_subject(ArrayList<Require> required_subject) {this.required_subject = required_subject;}
 	public void setIntern_credit(int intern_credit) {this.intern_credit = intern_credit;}
 	public void setCounseling(int counseling) {this.counseling = counseling;}
 	public void setCourse(String course) {this.course = course;}
