@@ -4,30 +4,31 @@ import java.awt.Color;
 import java.awt.Container;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Account_c extends JFrame{
 
 	public Account_c() {
 
-		setTitle("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½Æ²ï¿½Þ±ï¿½
+		setTitle("°ü¸®ÀÚ"); // ÇÁ·¹ÀÓÀÇ Å¸ÀÌÆ²´Þ±â
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		Container contentPane = getContentPane(); // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ò¾Ë¾Æ³ï¿½ï¿½ï¿½
-		contentPane.setBackground(Color.WHITE); // ï¿½Ï¾ï¿½ï¿½ ï¿½ï¿½æ¼³ï¿½ï¿½
-		contentPane.setLayout(null); 	// Layoutï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½	
-										// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½
+		Container contentPane = getContentPane(); // ÄÁÅÙÆ®ÆÒ¾Ë¾Æ³»±â
+		contentPane.setBackground(Color.WHITE); // ÇÏ¾á»ö ¹è°æ¼³Á¤
+		contentPane.setLayout(null); 	// LayoutÀ» Á¤ÇÏÁö ¾Ê±â	
+										// Àý´ëÀû À§Ä¡¸¦ ÁöÁ¤ÇØ ÁÖ±â À§ÇØ
 		
-		JLabel label = new JLabel("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+		JLabel label = new JLabel("°èÁ¤ ¼öÁ¤");
 		label.setLocation(80,50);
 		label.setSize(140, 60);
 		label.setHorizontalAlignment(JLabel.CENTER);
 		contentPane.add(label);
 		
-		// ï¿½Þ´ï¿½ ï¿½È¿ï¿½ ï¿½ï¿½î°¥ ï¿½ï¿½Æ°
-		JButton button1 = new JButton("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
-		JButton button2 = new JButton("ï¿½ï¿½ï¿½ï¿½");
-		JButton button3 = new JButton("ï¿½ï¿½ï¿½ï¿½");
+		// ¸Þ´º ¾È¿¡ µé¾î°¥ ¹öÆ°
+		JButton button1 = new JButton("°èÁ¤ Á¤º¸");
+		JButton button2 = new JButton("ÀúÀå");
+		JButton button3 = new JButton("»èÁ¦");
 		
 		button1.setLocation(80,140);
 		button1.setSize(140, 60);
@@ -41,8 +42,8 @@ public class Account_c extends JFrame{
 		button3.setSize(140, 60);
 		contentPane.add(button3);
 		
-		setSize(300, 500); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ 300x150 ï¿½ï¿½ï¿½ï¿½
-		setVisible(true); // È­ï¿½é¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		setSize(300, 500); // ÇÁ·¹ÀÓ Å©±â 300x150 ¼³Á¤
+		setVisible(true); // È­¸é¿¡ ÇÁ·¹ÀÓ Ãâ·Â
 	}
 
 /*
