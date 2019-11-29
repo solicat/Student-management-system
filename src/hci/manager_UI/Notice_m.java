@@ -1,4 +1,4 @@
-package manager_UI;
+package hci.manager_UI;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -9,15 +9,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import manager_UI.Account_m.MyActionListener1;
-import manager_UI.Account_m.MyActionListener2;
+import hci.manager_UI.Account_m.MyActionListener1;
+import hci.manager_UI.Account_m.MyActionListener2;
 
 public class Notice_m extends JFrame{
 
 	public Notice_m() {
 
 		setTitle("관리자"); // 프레임의 타이틀달기
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		Container contentPane = getContentPane(); // 컨텐트팬알아내기
 		contentPane.setBackground(Color.WHITE); // 하얀색 배경설정

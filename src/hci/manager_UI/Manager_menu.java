@@ -1,4 +1,4 @@
-package manager_UI;
+package hci.manager_UI;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 
-import manager_UI.Graduation_requirement_m;
+import hci.manager_UI.Graduation_requirement_m;
 /*
 import student_UI.Personal_information;
 import student_UI.Student_menu;
@@ -23,7 +23,8 @@ public class Manager_menu extends JFrame{
 	public Manager_menu() {
 
 		setTitle("관리자 메뉴"); // 프레임의 타이틀달기
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		Container contentPane = getContentPane(); // 컨텐트팬알아내기
 		contentPane.setBackground(Color.WHITE); // 하얀색 배경설정
@@ -67,10 +68,12 @@ public class Manager_menu extends JFrame{
 		setSize(300, 500); // 프레임 크기 300x150 설정
 		setVisible(true); // 화면에 프레임 출력
 	}
+	/*
 	public static void main(String[] args) {
 			// TODO Auto-generated method stub
 			new Manager_menu();
 	}
+	*/
 	
 	class MyActionListener1 implements ActionListener{
 		@Override

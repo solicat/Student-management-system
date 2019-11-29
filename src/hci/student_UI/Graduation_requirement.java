@@ -1,4 +1,4 @@
-package student_UI;
+package hci.student_UI;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -12,7 +12,8 @@ public class Graduation_requirement extends JFrame{
 		public Graduation_requirement() {
 
 			setTitle("학생 메뉴"); // 프레임의 타이틀달기
-			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			
 			Container contentPane = getContentPane(); // 컨텐트팬알아내기
 			contentPane.setBackground(Color.WHITE); // 하얀색 배경설정

@@ -1,5 +1,5 @@
-package student_UI;
-import manager_UI.Notice_m;
+package hci.student_UI;
+import hci.manager_UI.Notice_m;
 
 import java.awt.*;
 import javax.swing.*;
@@ -10,7 +10,8 @@ public class Student_menu extends JFrame{
 	public Student_menu() {
 
 		setTitle("학생 메뉴"); // 프레임의 타이틀달기
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		Container contentPane = getContentPane(); // 컨텐트팬알아내기
 		contentPane.setBackground(Color.WHITE); // 하얀색 배경설정
@@ -47,10 +48,13 @@ public class Student_menu extends JFrame{
 		setSize(300, 500); // 프레임 크기 300x150 설정
 		setVisible(true); // 화면에 프레임 출력
 	}
+	
+	/*
 	public static void main(String[] args) {
 			// TODO Auto-generated method stub
 			new Student_menu();
 	}
+	*/
 	
 	class MyActionListener1 implements ActionListener{
 		@Override
