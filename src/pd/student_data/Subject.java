@@ -1,23 +1,35 @@
 package pd.student_data;
 
-public class Subject {
-	
-	private double grade;
-	private String course_code;
-	private String professor;
-	
-	public Subject(double grade, String course_code, String professor) {
-		super();
+import java.io.Serializable;
+
+public class Subject implements Serializable{
+	private String grade;
+	private String code;
+	private String course_name;
+	private String prof_name;
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
 		this.grade = grade;
-		this.course_code = course_code;
-		this.professor = professor;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getCourse_name() {
+		return course_name;
+	}
+	public void setCoures_name(String coures_name) {
+		this.course_name = coures_name;
+	}
+	public String getProf_name() {
+		return prof_name;
+	}
+	public void setProf_name(String prof_name) {
+		this.prof_name = prof_name;
 	}
 	
-	public double getGrade() {return grade;}
-	public String getCourse_code() {return course_code;}
-	public String getProfessor() {return professor;}
-	public void setGrade(double grade) {this.grade = grade;}
-	public void setCourse_code(String course_code) {this.course_code = course_code;}
-	public void setProfessor(String professor) {this.professor = professor;}
-
 }

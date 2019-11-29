@@ -1,22 +1,28 @@
 package pd.student_data;
 
-public class Intern {
+import java.io.Serializable;
 
-	private String company;
+public class Intern implements Serializable{
+	private String company_name;
 	private int period;
 	private int credit;
-	
-	public Intern(String company, int period, int credit) {
-		super();
-		this.company = company;
+	public int getPeriod() {
+		return period;
+	}
+	public void setPeriod(int period) {
 		this.period = period;
+	}
+	public String getCompany_name() {
+		return company_name;
+	}
+	public void setCompany_name(String company_name) {
+		this.company_name = company_name;
+	}
+	public int getCredit() {
+		return credit;
+	}
+	public void setCredit(int credit) {
 		this.credit = credit;
 	}
 	
-	public String getCompany() {return company;}
-	public int getPeriod() {return period;}
-	public int getCredit() {return credit;}
-	public void setCompany(String company) {this.company = company;}
-	public void setPeriod(int period) {this.period = period;}
-	public void setCredit(int credit) {this.credit = credit;}
 }
