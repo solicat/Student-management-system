@@ -20,8 +20,17 @@ public class Requirement implements Serializable{
 	private int track;//전공트랙 0 1 2 3 4 5
 	private int in_year;//입학년도
 	
-	public Requirement() { // 매개변수 뭐 줘야할지 모르겠습니다.
-		
+	public Requirement(Language_score language_score, Foriegn_exchange foriegn_exchange, Intern intern,
+			ArrayList<Subject> essential_subject, int consult_cnt, int major, int track, int in_year) {
+		super();
+		this.language_score=language_score;
+		this.foriegn_exchange=foriegn_exchange;
+		this.intern=intern;
+		this.essential_subject=essential_subject;
+		this.consult_cnt=consult_cnt;
+		this.major=major;
+		this.track=track;
+		this.in_year=in_year;
 	}
 	
 	public Language_score getLanguage_score() {

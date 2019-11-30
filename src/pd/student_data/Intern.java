@@ -6,6 +6,13 @@ public class Intern implements Serializable{
 	private String company_name;
 	private int period;
 	private int credit;
+	
+	public Intern(String company_name, int period, int credit) {
+		super();
+		this.company_name=company_name;
+		this.period=period;
+		this.credit=credit;
+	}
 	public int getPeriod() {
 		return period;
 	}
