@@ -10,7 +10,7 @@ public class Failure extends JFrame implements ActionListener{
 	public static final int HEIGHT = 200;
 	
 	public Failure() {
-		super("Login Failure");
+		super("로그인 실패");
 		setSize(WIDTH, HEIGHT);
 		setLocationRelativeTo(null);
 		setLayout(new GridLayout(3, 1));

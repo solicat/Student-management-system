@@ -17,7 +17,7 @@ public class Personal_information_m extends JFrame{
 
 	public Personal_information_m() {
 
-		setTitle("관리자"); // 프레임의 타이틀달기
+		setTitle("학생 경력 관리"); // 프레임의 타이틀달기
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		

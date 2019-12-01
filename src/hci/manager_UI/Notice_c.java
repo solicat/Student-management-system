@@ -11,7 +11,7 @@ public class Notice_c extends JFrame{
 
 	public Notice_c() {
 
-		setTitle("관리자"); // 프레임의 타이틀달기
+		setTitle("공지사항"); // 프레임의 타이틀달기
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		

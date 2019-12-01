@@ -76,7 +76,7 @@ public class Student_menu extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			new Notice_m();
+			new Notice_check();
 		}	
 	}
 }

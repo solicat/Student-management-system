@@ -12,7 +12,7 @@ public class Personal_information extends JFrame {
 
 		public Personal_information() {
 
-			setTitle("학생 메뉴"); // 프레임의 타이틀달기
+			setTitle("개인 정보"); // 프레임의 타이틀달기
 			//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			

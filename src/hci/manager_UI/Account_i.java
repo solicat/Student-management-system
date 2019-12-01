@@ -11,7 +11,7 @@ public class Account_i extends JFrame{
 
 	public Account_i() {
 
-		setTitle("관리자"); // 프레임의 타이틀달기
+		setTitle("계정 관리"); // 프레임의 타이틀달기
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		

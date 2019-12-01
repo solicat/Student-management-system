@@ -5,10 +5,11 @@ import java.io.Serializable;
 public class Language_score implements Serializable{
 	private String type;
 	private double score;
+		
 	public Language_score(String type, double score) {
 		super();
-		this.type=type;
-		this.score=score;
+		this.type = type;
+		this.score = score;
 	}
 	public String getType() {
 		return type;

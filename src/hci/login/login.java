@@ -21,7 +21,7 @@ public class login extends JFrame implements ActionListener
 	private JTextField PW;
 
 	public login() {
-		super("Login");
+		super("·Î±×ÀÎ");
 		setLayout(new GridLayout(4, 1));
 		setSize(WIDTH, HEIGHT);
 		setLocationRelativeTo(null);

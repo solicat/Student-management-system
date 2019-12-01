@@ -11,7 +11,7 @@ public class Graduation_requirement_c extends JFrame{
 
 	public Graduation_requirement_c() {
 
-		setTitle("관리자"); // 프레임의 타이틀달기
+		setTitle("졸업 요건 관리"); // 프레임의 타이틀달기
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
