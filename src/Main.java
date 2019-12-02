@@ -80,6 +80,7 @@ public class Main {
 		Account_data account = new Account_data();
 		account.openAccount();
 		
+		
 		Notice_data data = new Notice_data();
 		data.openNotice();
 		
