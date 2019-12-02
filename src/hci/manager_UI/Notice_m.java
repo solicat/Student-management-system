@@ -63,7 +63,7 @@ public class Notice_m extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			new Notice_c();
+			new Notibe_i();
 		}	
 	}
 	
@@ -71,7 +71,7 @@ public class Notice_m extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			new Notibe_i();
+			new Notice_c();
 		}	
 	}
 }
