@@ -80,6 +80,9 @@ public class Main {
 		Account_data account = new Account_data();
 		account.openAccount();
 		
+		Notice_data data = new Notice_data();
+		data.openNotice();
+		
 		login loginGui = new login();
 		loginGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		loginGui.setVisible(true);		
