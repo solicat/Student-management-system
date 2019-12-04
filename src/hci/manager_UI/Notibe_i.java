@@ -1,15 +1,19 @@
 package hci.manager_UI;
 
-import java.awt.Color;
-import java.awt.Container;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import dm.Notice_data;
+import pd.management.Notice;
 
 public class Notibe_i extends JFrame{
 
-	public Notibe_i() {
+	public static final int TITLE_CHAR = 20;
+	private JTextField titleField;
+	private JTextArea content;
+	private JTextField type;
+	
+	public Notibe_i(String title) {
 
 		setTitle("공지사항"); // 프레임의 타이틀달기
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -17,31 +21,44 @@ public class Notibe_i extends JFrame{
 		
 		Container contentPane = getContentPane(); // 컨텐트팬알아내기
 		contentPane.setBackground(Color.WHITE); // 하얀색 배경설정
-		contentPane.setLayout(null); 	// Layout을 정하지 않기	
-										// 절대적 위치를 지정해 주기 위해
+		contentPane.setLayout(new BorderLayout(10,10)); 	
 		
-		JLabel label = new JLabel("공지 사항 내용");
-		label.setLocation(80,50);
-		label.setSize(140, 60);
-		label.setHorizontalAlignment(JLabel.CENTER);
-		contentPane.add(label);
+		Notice notice = Notice_data.getNoticeByTitle(title);
 		
-		// 메뉴 안에 들어갈 버튼
-		JButton button1 = new JButton("공지 사항 내용");
-		JButton button2 = new JButton("수정");
-		JButton button3 = new JButton("삭제");
 		
-		button1.setLocation(80,140);
-		button1.setSize(140, 60);
-		contentPane.add(button1);
+		JPanel topPanel = new JPanel(new GridLayout(2,1));
 		
-		button2.setLocation(80,220);
-		button2.setSize(140, 60);
-		contentPane.add(button2);
+		/*Title*/
+		JPanel titlePanel = new JPanel();
+		JLabel titleLabel = new JLabel("제목 : ");
+		JTextField titleField = new JTextField(title, TITLE_CHAR);
+		titlePanel.add(titleLabel);
+		titlePanel.add(titleField);
+		topPanel.add(titlePanel);
 		
-		button3.setLocation(80,300);
-		button3.setSize(140, 60);
-		contentPane.add(button3);
+		/*Type*/
+		JPanel typePanel = new JPanel();
+		JLabel typeLabel = new JLabel("분류 : ");
+		JTextField type = new JTextField(notice.getType(), TITLE_CHAR);
+		typePanel.add(typeLabel);
+		typePanel.add(type);
+		topPanel.add(typePanel);
+		
+		contentPane.add(topPanel, BorderLayout.NORTH);
+		
+		
+		/*Content*/
+		TextArea content = new TextArea(notice.getContent());
+		contentPane.add(content, BorderLayout.CENTER);
+		
+		/*Buttons*/
+		JPanel buttonPanel = new JPanel(new GridLayout(1,2));
+		JButton button1 = new JButton("수정");
+		JButton button2 = new JButton("삭제");
+		
+		buttonPanel.add(button1);	buttonPanel.add(button2);		
+		contentPane.add(buttonPanel, BorderLayout.SOUTH);
+
 		
 		setSize(300, 500); // 프레임 크기 300x150 설정
 		setVisible(true); // 화면에 프레임 출력
@@ -53,5 +70,4 @@ public class Notibe_i extends JFrame{
 		new Graduation_requirement_c();
 	}
 */
-
 }

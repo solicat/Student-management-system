@@ -54,8 +54,6 @@ public class Notice_data {
 		return true;
 	}
 	
-	
-	
 	//suggest: 공지사항 하나에 id를 부여해서 그 id로 search하는 게 좋지 않을까요?
 	public boolean deleteNotice(String type, String title, String content) {
 		for(Notice n : notice) {
@@ -69,8 +67,17 @@ public class Notice_data {
 		return false;
 	}
 	
-	public void modifyNotice() {
-		
+	public static Notice getNoticeByTitle(String title) {
+		for(Notice a : notice) {
+			if(a.getTitle().equals(title)){
+				return a;
+			}
+		}
+		return null;	// Can't find
+	}
+	
+	public boolean modifyNotice() {
+		return false;
 	}
 	
 }

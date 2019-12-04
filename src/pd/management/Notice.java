@@ -53,9 +53,11 @@ public class Notice implements Serializable{
 	
 	public void modify_notice() 
 	{
-		
+		Notice_data data = new Notice_data();
+		if(data.modifyNotice()) {
+			System.out.println("Success: Modifying notice");
 	}
-	
+	}
 	//public static void main(String[] args) {		
 		
 	//}

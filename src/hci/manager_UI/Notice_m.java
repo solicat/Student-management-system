@@ -1,17 +1,13 @@
 package hci.manager_UI;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.*;
 
-import hci.manager_UI.Account_m.MyActionListener1;
-import hci.manager_UI.Account_m.MyActionListener2;
-import pd.management.Administrator;
+import dm.Notice_data;
+import pd.management.Notice;
 
 public class Notice_m extends JFrame{
 
@@ -33,18 +29,23 @@ public class Notice_m extends JFrame{
 		contentPane.add(label);
 		
 		// 메뉴 안에 들어갈 버튼
-		JButton button1 = new JButton("공지사항 제목");
+		JPanel panel1 = new JPanel();
+		ArrayList<Notice> notice = Notice_data.getList();
+		JButton[] btn = new JButton[notice.size()];
+		panel1.setLayout(new GridLayout(notice.size(),1));
+		for(int i =0; i< notice.size(); i++) {
+			btn[i] = new JButton(notice.get(i).getTitle());
+			btn[i].addActionListener(new MyActionListener1());
+			panel1.add(btn[i]);
+		}	
+		panel1.setLocation(20,140);
+		panel1.setSize(250, 20*notice.size());
+		contentPane.add(panel1);
+		
 		JButton button2 = new JButton("추가");
-		
-		button1.setLocation(80,140);
-		button1.setSize(140, 60);
-		contentPane.add(button1);
-		
 		button2.setLocation(80,220);
 		button2.setSize(140, 60);
 		contentPane.add(button2);
-		
-		button1.addActionListener(new MyActionListener1());
 		button2.addActionListener(new MyActionListener2());
 		
 		setSize(300, 500); // 프레임 크기 300x150 설정
@@ -63,7 +64,10 @@ public class Notice_m extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			new Notibe_i();
+			JButton btn = (JButton) e.getSource();
+			String title = btn.getActionCommand();
+			    
+			new Notibe_i(title);
 		}	
 	}
 	

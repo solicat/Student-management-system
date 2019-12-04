@@ -1,13 +1,12 @@
 package hci.student_UI;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import dm.Notice_data;
+import pd.management.Notice;
 
 public class Notice_check extends JFrame{
 	public Notice_check() {
@@ -28,12 +27,19 @@ public class Notice_check extends JFrame{
 		contentPane.add(label);
 		
 		// 메뉴 안에 들어갈 버튼
-		JButton button1 = new JButton("공지사항 제목");
-		//JButton button2 = new JButton("추가");
+		JPanel panel1 = new JPanel();
+		ArrayList<Notice> notice = Notice_data.getList();
+		JButton[] btn = new JButton[notice.size()];
+		panel1.setLayout(new GridLayout(notice.size(),1));
+		for(int i =0; i< notice.size(); i++) {
+			btn[i] = new JButton(notice.get(i).getTitle());
+			btn[i].addActionListener(new MyActionListener1());
+			panel1.add(btn[i]);
+		}	
 		
-		button1.setLocation(80,140);
-		button1.setSize(140, 60);
-		contentPane.add(button1);
+		panel1.setLocation(20,140);
+		panel1.setSize(250, 20*notice.size());
+		contentPane.add(panel1);
 		
 		//button2.setLocation(80,220);
 		//button2.setSize(140, 60);
@@ -54,14 +60,17 @@ public class Notice_check extends JFrame{
 	}
  * */
 
-/*
 	class MyActionListener1 implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			new Notice_c();
+		    JButton btn = (JButton) e.getSource();
+		    String title = btn.getActionCommand();
+		    
+			new Notice_content(title);
 		}	
 	}
+	/*
 	
 	class MyActionListener2 implements ActionListener{
 		@Override
