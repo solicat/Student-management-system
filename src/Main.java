@@ -16,8 +16,6 @@ public class Main {
 	
 		ArrayList<Account> iaccount = new ArrayList<Account>();
 
-		ArrayList<Account> iaccount = new ArrayList<Account>();
-
 		iaccount.add(new Account("0000000000", "qwer", new Student()));
 		iaccount.add(new Account("1111111111", "asdf", new Student()));
 		iaccount.add(new Account("2222222222", "zxcv", new Administrator()));
