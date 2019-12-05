@@ -66,8 +66,12 @@ public class Account_data {
 		return false;
 	}
 	
-	public void modifyAccount() {
-		
+	public void modifyAccount(String id, Account acc) {
+		for(Account a : account) {
+			if(a.getID().equals(id)) {
+				account.set(account.indexOf(a), acc);
+			}
+		}
 	}
 	
 	public static int tryLogin(String id, String pw) {

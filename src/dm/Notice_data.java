@@ -24,6 +24,7 @@ public class Notice_data {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			
+			
 		}
 	}
 	
@@ -49,6 +50,7 @@ public class Notice_data {
 	}
 	
 	//suggest: 공지사항 하나에 id를 부여해서 그 id로 search하는 게 좋지 않을까요?
+		// index 로 처리하는 것이 편할것 같습니다. Requirment 도 그렇게 했음
 	public boolean deleteNotice(String type, String title, String content) {
 		for(Notice n : notice) {
 			if(n.getType().equals(type)

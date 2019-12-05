@@ -30,34 +30,6 @@ public class Main {
 		} catch (IOException e) {
 			System.out.println("Problem with file output.");
 		}
-
-		ArrayList<Subject> e_sub = new ArrayList<Subject>();
-		e_sub.add(new Subject("Success", "code", "name", "prof"));
-
-		ArrayList<Requirement> req = new ArrayList<Requirement>();
-		req.add(new Requirement(new Language_score("TOEIC", 55.5), new Foriegn_exchange("USA", "aa", 30),
-				new Intern("bbb", 5, 5), e_sub, 1, 2, 3, 4));
-		for (Requirement i : req) {
-			System.out.println(i.getLanguage_score().getType() + " " + i.getLanguage_score().getScore());
-			System.out.println(i.getForiegn_exchange().getCountry_name() + " " + i.getForiegn_exchange().getUniv_name()
-					+ " " + i.getForiegn_exchange().getCredit());
-			System.out.println(i.getIntern().getCompany_name() + " " + i.getIntern().getPeriod() + " "
-					+ i.getIntern().getCredit());
-			for (Subject j : i.getEssential_subject())
-				System.out.println("'" + j.getCourse_name() + " " + j.getCode() + " " + j.getCourse_name() + " "
-						+ j.getProf_name() + "'");
-			System.out.println(i.getConsult_cnt() + " " + i.getMajor() + " " + i.getTrack() + " " + i.getIn_year());
-
-		}
-		try {
-			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Requirement.dat"));
-			ostream.writeObject(req);
-
-			ostream.close();
-		} catch (IOException e) {
-			System.out.println("Problem with file output.");
-		}
-
 		
 		Account_data account = new Account_data();
 		account.openAccount();
@@ -66,9 +38,29 @@ public class Main {
 		data.openNotice();
 		
 		Requirement_data requirement = new Requirement_data();
-		requirement.openRequirement();
-
+		requirement.openRequirement();  // open from file(Requirement.dat)
 		
+	/*	ArrayList<Subject> e_sub = new ArrayList<Subject>();
+		e_sub.add(new Subject("Success3", "code", "name", "prof"));
+
+		requirement.createRequirement((new Requirement(new Language_score("TOEIC3", 55.5), new Foriegn_exchange("USA3", "aa", 30),
+				new Intern("bbb3", 5, 5), e_sub, 5, 6, 7, 8)));
+		// new requirement data insert example
+
+		System.out.println("삭제 전 출력");
+		requirement.print_requirement();  // requirement arraylist print method
+		
+		requirement.deleteRequirement(2);
+		System.out.println("삭제 후 출력");
+		requirement.print_requirement();  // requirement arraylist print method
+		
+		
+		e_sub.add(new Subject("M1", "code", "name", "prof"));
+		requirement.modifyRequirement((new Requirement(new Language_score("M1", 55.5), new Foriegn_exchange("M1", "aa", 30),
+				new Intern("m1", 5, 5), e_sub, 5, 6, 7, 8)), 1);
+		System.out.println("수정 후 출력");
+		requirement.print_requirement();  // requirement arraylist print method*/
+
 		
 		login loginGui = new login();
 		loginGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
