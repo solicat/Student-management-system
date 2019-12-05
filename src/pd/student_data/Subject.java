@@ -3,10 +3,18 @@ package pd.student_data;
 import java.io.Serializable;
 
 public class Subject implements Serializable{
-	private String grade;
-	private String code;
-	private String course_name;
+	private String grade; //A+ 
+	private String code; //�����ڵ�
+	private String course_name; //�����
 	private String prof_name;
+	
+	public Subject(String grade, String code, String course_name, String prof_name) {
+		super();
+		this.grade=grade;
+		this.code=code;
+		this.course_name=course_name;
+		this.prof_name=prof_name;
+	}
 	public String getGrade() {
 		return grade;
 	}
@@ -31,5 +39,4 @@ public class Subject implements Serializable{
 	public void setProf_name(String prof_name) {
 		this.prof_name = prof_name;
 	}
-	
 }
