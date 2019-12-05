@@ -13,6 +13,8 @@ import pd.student_data.*;
 public class Main {
 
 	public static void main(String[] args) {
+	
+		ArrayList<Account> iaccount = new ArrayList<Account>();
 
 		ArrayList<Account> iaccount = new ArrayList<Account>();
 
