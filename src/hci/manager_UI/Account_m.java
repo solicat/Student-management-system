@@ -1,16 +1,8 @@
 package hci.manager_UI;
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import hci.manager_UI.Graduation_requirement_m.MyActionListener1;
-import hci.manager_UI.Graduation_requirement_m.MyActionListener2;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class Account_m extends JFrame{
 

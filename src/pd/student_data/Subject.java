@@ -39,5 +39,4 @@ public class Subject implements Serializable{
 	public void setProf_name(String prof_name) {
 		this.prof_name = prof_name;
 	}
-	
 }

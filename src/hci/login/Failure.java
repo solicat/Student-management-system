@@ -1,7 +1,6 @@
 package hci.login;
 
-import java.awt.Color;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 

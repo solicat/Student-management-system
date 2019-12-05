@@ -86,4 +86,4 @@ public class Requirement implements Serializable{
 	public void setIn_year(int in_year) {
 		this.in_year = in_year;
 	}
-}
+	}

@@ -1,11 +1,7 @@
 package hci.manager_UI;
 
-import java.awt.Color;
-import java.awt.Container;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.*;
+import javax.swing.*;
 
 public class Graduation_requirement_c extends JFrame{
 

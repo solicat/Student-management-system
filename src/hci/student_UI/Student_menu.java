@@ -1,5 +1,4 @@
 package hci.student_UI;
-import hci.manager_UI.Notice_m;
 
 import java.awt.*;
 import javax.swing.*;

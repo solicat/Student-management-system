@@ -3,7 +3,6 @@ package hci.manager_UI;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-
 import javax.swing.*;
 
 import dm.Notice_data;
