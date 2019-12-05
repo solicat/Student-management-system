@@ -10,15 +10,15 @@ import pd.student_data.Subject;
 
 public class Requirement implements Serializable{
 
-	private Language_score language_score;//¾îÇÐ¼ºÀû
-	private Foriegn_exchange foriegn_exchange;//ÇØ¿Ü´ëÇÐ ÀÌ¼öÇÐÁ¡
-	private Intern intern;//ÇöÀå½Ç½À ÇÐÁ¡
-	private ArrayList<Subject> essential_subject;//ÇÊ¼ö ÀÌ¼ö°ú¸ñ
+	private Language_score language_score;//ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½
+	private Foriegn_exchange foriegn_exchange;//ï¿½Ø¿Ü´ï¿½ï¿½ï¿½ ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½
+	private Intern intern;//ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private ArrayList<Subject> essential_subject;//ï¿½Ê¼ï¿½ ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	private int consult_cnt;//»ó´ãÈ½¼ö
-	private int major;//ÇÐºÎ°úÁ¤
-	private int track;//Àü°øÆ®·¢ 0 1 2 3 4 5
-	private int in_year;//ÀÔÇÐ³âµµ
+	private int consult_cnt;//ï¿½ï¿½ï¿½È½ï¿½ï¿½
+	private int major;//ï¿½ÐºÎ°ï¿½ï¿½ï¿½
+	private int track;//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ 0 1 2 3 4 5
+	private int in_year;//ï¿½ï¿½ï¿½Ð³âµµ
 	
 	public Requirement(Language_score language_score, Foriegn_exchange foriegn_exchange, Intern intern,
 			ArrayList<Subject> essential_subject, int consult_cnt, int major, int track, int in_year) {
@@ -86,4 +86,4 @@ public class Requirement implements Serializable{
 	public void setIn_year(int in_year) {
 		this.in_year = in_year;
 	}
-}
+	}

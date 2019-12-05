@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Subject implements Serializable{
 	private String grade; //A+ 
-	private String code; //°ú¸ñÄÚµå
-	private String course_name; //°ú¸ñ¸í
+	private String code; //ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
+	private String course_name; //ï¿½ï¿½ï¿½ï¿½ï¿½
 	private String prof_name;
 	
 	public Subject(String grade, String code, String course_name, String prof_name) {
@@ -39,5 +39,4 @@ public class Subject implements Serializable{
 	public void setProf_name(String prof_name) {
 		this.prof_name = prof_name;
 	}
-	
 }
