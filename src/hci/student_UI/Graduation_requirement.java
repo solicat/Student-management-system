@@ -28,30 +28,52 @@ public class Graduation_requirement extends JFrame{
 			label.setHorizontalAlignment(JLabel.CENTER);
 			contentPane.add(label);
 			
-			/*
-			// 메뉴 안에 들어갈 버튼
-			JButton button1 = new JButton("졸업 조건 달성도");
-			
-			button1.setLocation(80,140);
-			button1.setSize(140, 60);
-			contentPane.add(button1);
-			*/
-			
 			Requirement_data data = new Requirement_data();
 			data.openRequirement();
 			ArrayList<Requirement> requirement = data.get_Requirement();
 			Requirement check = null;
 			
 			String track = "글로벌소프트웨어 학석사연계"; //Student에서 track 가져오는 부분 구현 필요, 정확한 String 형식?
-			if(track.equals("글로벌소프트웨어 학석사연계")) { //트랙 구분 개수만큼 if문 구현 필요
+			
+			//String track -> requirement
+			if(track.equals("심화컴퓨터")) {
+				for (Requirement i : requirement) {
+					if(i.getTrack() == 0) {
+						check = i;
+						break;
+					}
+				}
+			}else if(track.equals("글로벌소프트웨어 다중전공")) {
+				for (Requirement i : requirement) {
+					if(i.getTrack() == 1) {
+						check = i;
+						break;
+					}
+				}
+			}else if(track.equals("글로벌소프트웨어 해외복수학위")) {
+				for (Requirement i : requirement) {
+					if(i.getTrack() == 2) {
+						check = i;
+						break;
+					}
+				}
+			}else if(track.equals("글로벌소프트웨어 학석사연계")) {
 				for (Requirement i : requirement) {
 					if(i.getTrack() == 3) {
 						check = i;
 						break;
 					}
 				}
+			}else if(track.equals("SW 연계 융합")) {
+				for (Requirement i : requirement) {
+					if(i.getTrack() == 4) {
+						check = i;
+						break;
+					}
+				}
 			}
 			
+			//panel
 			JPanel requirePanel = new JPanel();
 			requirePanel.setLayout(new GridLayout(15, 1)); //최대 필수과목 수에 따라 조정 필요
 			
