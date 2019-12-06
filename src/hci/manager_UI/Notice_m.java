@@ -42,8 +42,8 @@ public class Notice_m extends JFrame{
 		contentPane.add(panel1);
 		
 		JButton button2 = new JButton("Ãß°¡");
-		button2.setLocation(80,220);
-		button2.setSize(140, 60);
+		button2.setLocation(110,350);
+		button2.setSize(80, 20);
 		contentPane.add(button2);
 		button2.addActionListener(new MyActionListener2());
 		
