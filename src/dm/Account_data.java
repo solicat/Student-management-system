@@ -34,24 +34,10 @@ public class Account_data {
 			}
 		}
 		
-		if(admin)
-			temp = new Account(id, pw, new Administrator());
-		else
-			temp = new Account(id, pw, new Student());
+		if(admin) temp = new Account(id, pw, new Administrator());
+		else temp = new Account(id, pw, new Student());
 		account.add(temp);		
-		try {
-			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Account.dat"));
-			ostream.writeObject(account);
-			ostream.close();
-			
-			
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.FileSave();
 		return true;
 	}
 	
@@ -59,19 +45,23 @@ public class Account_data {
 		for(Account a : account) {
 			if(a.getID().equals(id)) {
 				account.remove(a);
+				this.FileSave();
 				return true;
 			}
 		}
-		System.out.println("No ID");
+		System.out.println("Delete Fail: No ID");
 		return false;
 	}
 	
-	public void modifyAccount(String id, Account acc) {
+	public boolean modifyAccount(String id, Account acc) {
 		for(Account a : account) {
 			if(a.getID().equals(id)) {
 				account.set(account.indexOf(a), acc);
+				this.FileSave();
+				return true;
 			}
 		}
+		return false;
 	}
 	
 	public static int tryLogin(String id, String pw) {
@@ -86,5 +76,19 @@ public class Account_data {
 			}
 		}
 		return 0;	// Login fail
+	}
+	
+	public void FileSave() {
+		try {
+			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Account.dat"));
+			ostream.writeObject(account);
+			ostream.close();		
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

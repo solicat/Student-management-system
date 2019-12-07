@@ -34,10 +34,17 @@ public class Notice implements Serializable{
 	
 	public void delete_notice() 
 	{
+		boolean flag = false;
 		Notice_data data = new Notice_data();
-		if(data.deleteNotice(type, title, content)) {
-			System.out.println("Success: Deleting notice");
+		for(Notice a : data.getList()) {
+			if(a.getType().equals(this.getType()) && a.getTitle().equals(this.getTitle()) && a.getContent().equals(this.getContent())) {
+				data.deleteNotice(data.getList().indexOf(a));
+				System.out.println("Success: Deleting notice");
+				flag = true;
+				break;
+			}
 		}
+		if(!flag) System.out.println("Fail: Deleting notice");
 	}
 	
 	public void check_notice() 
@@ -47,10 +54,10 @@ public class Notice implements Serializable{
 	
 	public void modify_notice() 
 	{
-		Notice_data data = new Notice_data();
+/*		Notice_data data = new Notice_data();
 		if(data.modifyNotice()) {
 			System.out.println("Success: Modifying notice");
-	}
+	}*/
 	}
 	//public static void main(String[] args) {		
 		

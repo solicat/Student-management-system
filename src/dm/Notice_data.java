@@ -7,7 +7,6 @@ import pd.management.Notice;
 
 public class Notice_data {
 	private static ArrayList<Notice> notice;
-	
 	public static ArrayList<Notice> getList(){
 		return notice;
 	}
@@ -33,32 +32,19 @@ public class Notice_data {
 		
 		temp = new Notice(type, title, content);
 		notice.add(temp);
-		
-		try {
-			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Notice.dat"));
-			ostream.writeObject(notice);
-			ostream.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.FileSave();
 		
 		return true;
 	}
 	
 	//suggest: 공지사항 하나에 id를 부여해서 그 id로 search하는 게 좋지 않을까요?
 		// index 로 처리하는 것이 편할것 같습니다. Requirment 도 그렇게 했음
-	public boolean deleteNotice(String type, String title, String content) {
-		for(Notice n : notice) {
-			if(n.getType().equals(type)
-					&& n.getTitle().equals(title)
-					&& n.getContent().equals(content)) {
-				notice.remove(n);
-				return true;
-			}
+	public boolean deleteNotice(int index) {
+		if(0<=index && index<this.getList().size())
+		{
+			notice.remove(index);
+			this.FileSave();
+			return true;
 		}
 		return false;
 	}
@@ -72,8 +58,29 @@ public class Notice_data {
 		return null;	// Can't find
 	}
 	
-	public boolean modifyNotice() {
+	
+	// modify 할 Arraylist  의 index 를 사용하여 수정하는 방식으로 하였습니다
+	public boolean modifyNotice(int index, String type, String title, String content) {
+		if(0<=index && index<this.getList().size())
+		{
+			this.getList().set(index, new Notice(type,title,content));
+			this.FileSave();
+			return true;
+		}
 		return false;
 	}
 	
+	public void FileSave() {
+		try {
+			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Notice.dat"));
+			ostream.writeObject(notice);
+			ostream.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
