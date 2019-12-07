@@ -1,6 +1,8 @@
 package pd.student_data;
 
-public class Application {
+import java.io.Serializable;
+
+public class Application implements Serializable {
 
 	private String type;
 	private String content;

@@ -1,8 +1,9 @@
 package pd.student_data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Career {
+public class Career implements Serializable{
 	
 	private int total_credit;
 	private int count_counseling;
@@ -17,6 +18,13 @@ public class Career {
 		this.count_counseling = count_counseling;
 	}
 	
+	public Career() {
+		this.exchange = new ArrayList<Foriegn_exchange>();
+		this.intern = new ArrayList<Intern>();
+		this.eng_grade = new ArrayList<Language_score>();
+		this.subject = new ArrayList<Subject>();
+	}
+
 	public int getTotal_credit() {return total_credit;}
 	public int getCount_counseling() {return count_counseling;}
 	public ArrayList<Foriegn_exchange> getExchange() {return exchange;}

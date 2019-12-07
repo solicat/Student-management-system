@@ -13,6 +13,9 @@ public class Intern implements Serializable{
 		this.period=period;
 		this.credit=credit;
 	}
+	public Intern() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getPeriod() {
 		return period;
 	}
