@@ -24,7 +24,7 @@ public class Student_menu extends JFrame{
 		contentPane.add(label);
 		
 		// 메뉴 안에 들어갈 버튼
-		JButton button1 = new JButton("졸업 조건 조회");
+		JButton button1 = new JButton("졸업 요건 조회");
 		JButton button2 = new JButton("개인 정보 조회");
 		JButton button3 = new JButton("공지 사항 조회");
 		
