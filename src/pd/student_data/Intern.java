@@ -13,6 +13,9 @@ public class Intern implements Serializable{
 		this.period=period;
 		this.credit=credit;
 	}
+	public Intern() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getPeriod() {
 		return period;
 	}
@@ -31,5 +34,7 @@ public class Intern implements Serializable{
 	public void setCredit(int credit) {
 		this.credit = credit;
 	}
-	
+	public String toString(){
+		return "Company: " + this.company_name + " Period: " + this.period + " Credit: " + this.credit;
+	}
 }

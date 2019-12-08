@@ -7,13 +7,16 @@ public class Foriegn_exchange implements Serializable{
 	private String univ_name;
 	private int credit;
 	
-	
+	public Foriegn_exchange() {
+		// TODO Auto-generated constructor stub
+	}
 	public Foriegn_exchange(String country_name, String univ_name, int credit) {
 		super();
 		this.country_name = country_name;
 		this.univ_name = univ_name;
 		this.credit = credit;
 	}
+	
 	public String getCountry_name() {
 		return country_name;
 	}
@@ -31,5 +34,9 @@ public class Foriegn_exchange implements Serializable{
 	}
 	public void setCredit(int credit) {
 		this.credit = credit;
+	}
+	
+	public String toString(){
+		return "Country: " + this.country_name + " Univ name: " + this.univ_name + "Credit: " + this.credit; 
 	}
 }

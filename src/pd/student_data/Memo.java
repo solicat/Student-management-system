@@ -1,6 +1,8 @@
 package pd.student_data;
 
-public class Memo {
+import java.io.Serializable;
+
+public class Memo implements Serializable {
 	
 	private String title;
 	private String content;
