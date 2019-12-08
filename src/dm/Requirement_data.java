@@ -4,15 +4,18 @@ import java.io.*;
 import java.util.ArrayList;
 
 import pd.management.Requirement;
+import pd.student_data.Foriegn_exchange;
+import pd.student_data.Intern;
+import pd.student_data.Language_score;
+import pd.student_data.Subject;
 
 public class Requirement_data {
 	private static ArrayList<Requirement> requirement;
-	
-	public void openRequirement(){
+
+	public void openRequirement() {
 		try {
-			ObjectInputStream istream = new ObjectInputStream(new FileInputStream("Requirement.dat"));	
+			ObjectInputStream istream = new ObjectInputStream(new FileInputStream("Requirement.dat"));
 			requirement = (ArrayList<Requirement>) istream.readObject();
-			System.out.println(requirement.get(0).getEssential_subject().get(0).getGrade());
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -20,23 +23,53 @@ public class Requirement_data {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			
+
 		}
 	}
-	
-	public boolean createRequirement(Requirement req){
-		System.out.println(req.getLanguage_score().getScore() + req.getLanguage_score().getType());
-		System.out.println(req.getIntern().getCompany_name() + req.getIntern().getCredit() + req.getIntern().getPeriod());
-		System.out.println(req.getForiegn_exchange().getCountry_name() + req.getForiegn_exchange().getCredit()+req.getForiegn_exchange().getUniv_name());
-		System.out.println(req.getEssential_subject().get(0).getGrade());
-		System.out.println(req.getConsult_cnt());
-		System.out.println(req.getMajor());
-		System.out.println(req.getTrack());
-		System.out.println(req.getIn_year());
-		
-		requirement = new ArrayList<Requirement>();
+
+	public ArrayList<Requirement> get_Requirement() {
+		return requirement;
+	}
+
+	public boolean createRequirement(Requirement req) {
 		requirement.add(req);
-		
+		this.FileSave();
+		return true;
+	}
+
+	public boolean modifyRequirement(Requirement req, int index) {
+		if (0 <= index && index < requirement.size()) {
+			requirement.set(index, req);
+			this.FileSave();
+			return true;
+		}
+		return false;
+	}
+
+	public void print_requirement() {
+		for (Requirement i : requirement) {
+			System.out.println(i.getLanguage_score().getType() + " " + i.getLanguage_score().getScore());
+			System.out.println(i.getForiegn_exchange().getCountry_name() + " " + i.getForiegn_exchange().getUniv_name()
+					+ " " + i.getForiegn_exchange().getCredit());
+			System.out.println(i.getIntern().getCompany_name() + " " + i.getIntern().getPeriod() + " "
+					+ i.getIntern().getCredit());
+			for (Subject j : i.getEssential_subject())
+				System.out.println("'" + j.getGrade() + " " + j.getCode() + " " + j.getCourse_name() + " "
+						+ j.getProf_name() + "'");
+			System.out.println(i.getConsult_cnt() + " " + i.getMajor() + " " + i.getTrack() + " " + i.getIn_year());
+		}
+	}
+
+	public boolean deleteRequirement(int index) {
+		if (0 <= index && index < requirement.size()) {
+			requirement.remove(index);
+			this.FileSave();
+			return true;
+		}
+		return false;
+	}
+	
+	public void FileSave() {
 		try {
 			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Requirement.dat"));
 			ostream.writeObject(requirement);
@@ -48,11 +81,5 @@ public class Requirement_data {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return true;
 	}
-	
-	public void modifyRequirement() {
-
-	}
-	
 }

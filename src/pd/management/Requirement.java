@@ -10,15 +10,22 @@ import pd.student_data.Subject;
 
 public class Requirement implements Serializable{
 
-	private Language_score language_score;//���м���
-	private Foriegn_exchange foriegn_exchange;//�ؿܴ��� �̼�����
-	private Intern intern;//����ǽ� ����
-	private ArrayList<Subject> essential_subject;//�ʼ� �̼�����
+	private Language_score language_score;//占쏙옙占싻쇽옙占쏙옙
+	private Foriegn_exchange foriegn_exchange;//占쌔외댐옙占쏙옙 占싱쇽옙占쏙옙占쏙옙
+	private Intern intern;//占쏙옙占쏙옙퓰占� 占쏙옙占쏙옙
+	private ArrayList<Subject> essential_subject;//占십쇽옙 占싱쇽옙占쏙옙占쏙옙
 	
-	private int consult_cnt;//���Ƚ��
-	private int major;//�кΰ���
-	private int track;//����Ʈ�� 0 1 2 3 4 5
-	private int in_year;//���г⵵
+	private int consult_cnt;//占쏙옙占싫쏙옙占�
+	private int major;//占싻부곤옙占쏙옙
+	private int track;//占쏙옙占쏙옙트占쏙옙 0 1 2 3 4 5
+	private int in_year;//占쏙옙占싻년도
+	
+	public Requirement() {
+		this.language_score = new Language_score();
+		this.foriegn_exchange = new Foriegn_exchange();
+		this.intern = new Intern();
+		this.essential_subject = new ArrayList<Subject>();
+	}
 	
 	public Requirement(Language_score language_score, Foriegn_exchange foriegn_exchange, Intern intern,
 			ArrayList<Subject> essential_subject, int consult_cnt, int major, int track, int in_year) {
