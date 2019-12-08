@@ -17,7 +17,9 @@ public class Student extends User
 	private ArrayList<Memo> memo;
 	
 	public Student() {
-		
+		this.career = new Career();
+		this.application = new ArrayList<Application>();
+		this.memo = new ArrayList<Memo>();
 	};
 	
 	public Student(String name, String student_number, String phone_number, String course, String track,

@@ -11,6 +11,9 @@ public class Language_score implements Serializable{
 		this.type = type;
 		this.score = score;
 	}
+	public Language_score() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getType() {
 		return type;
 	}
