@@ -47,9 +47,13 @@ public class Main {
 		Student1.setTrack("글로벌소프트웨어 학석사연계");
 		Student1.setProfessor("abc");
 		
+		fe_Stu1.add(new Foriegn_exchange("", "", 0));
 		stu1.setExchange(fe_Stu1);
+		int_Stu1.add(new Intern("", 0, 0));
 		stu1.setIntern(int_Stu1);
+		lan_Stu1.add(new Language_score("TOEIC", 650));
 		stu1.setEng_grade(lan_Stu1);
+		
 		stu1.setSubject(sub_Stu1);
 		
 		Student1.setCareer(stu1);	
@@ -67,9 +71,13 @@ public class Main {
 		Student2.setTrack("심화컴퓨터");
 		Student2.setProfessor("abc");
 		
+		fe_Stu2.add(new Foriegn_exchange("", "", 0));
 		stu2.setExchange(fe_Stu2);
+		int_Stu2.add(new Intern("", 0, 0));
 		stu2.setIntern(int_Stu2);
+		lan_Stu2.add(new Language_score("TOEIC", 750));
 		stu2.setEng_grade(lan_Stu2);
+
 		stu2.setSubject(sub_Stu2);
 		
 		Student2.setCareer(stu2);			
@@ -93,7 +101,7 @@ public class Main {
 		
 		ArrayList<Subject> trk0_req = new ArrayList<Subject>();
 		
-		trk0_req.add(new Subject("", "CLTR221", "", ""));
+		trk0_req.add(new Subject("", "CLTR211", "", ""));
 		trk0_req.add(new Subject("", "CLTR213", "", ""));
 		trk0_req.add(new Subject("", "CLTR223", "", ""));
 		trk0_req.add(new Subject("", "COME301", "", ""));

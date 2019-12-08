@@ -8,6 +8,10 @@ public class Subject implements Serializable{
 	private String course_name; 
 	private String prof_name;
 	
+	public Subject(){
+	
+	}
+	
 	public Subject(String grade, String code, String course_name, String prof_name) {
 		super();
 		this.grade=grade;
