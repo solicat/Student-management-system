@@ -11,10 +11,10 @@ import pd.student_data.Subject;
 
 public class Requirement_data {
 	private static ArrayList<Requirement> requirement;
-	
-	public void openRequirement(){
+
+	public void openRequirement() {
 		try {
-			ObjectInputStream istream = new ObjectInputStream(new FileInputStream("Requirement.dat"));	
+			ObjectInputStream istream = new ObjectInputStream(new FileInputStream("Requirement.dat"));
 			requirement = (ArrayList<Requirement>) istream.readObject();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -23,46 +23,29 @@ public class Requirement_data {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			
+
 		}
 	}
-	
-	public ArrayList<Requirement> get_Requirement(){
+
+	public ArrayList<Requirement> get_Requirement() {
 		return requirement;
 	}
-	
-	public boolean createRequirement(Requirement req){
+
+	public boolean createRequirement(Requirement req) {
 		requirement.add(req);
-		
-		try {
-			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Requirement.dat"));
-			ostream.writeObject(requirement);
-			ostream.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.FileSave();
 		return true;
 	}
-	
-	public void modifyRequirement(Requirement req, int index) {
-		requirement.set(index, req);
-		try {
-			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Requirement.dat"));
-			ostream.writeObject(requirement);
-			ostream.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+	public boolean modifyRequirement(Requirement req, int index) {
+		if (0 <= index && index < requirement.size()) {
+			requirement.set(index, req);
+			this.FileSave();
+			return true;
 		}
+		return false;
 	}
-	
+
 	public void print_requirement() {
 		for (Requirement i : requirement) {
 			System.out.println(i.getLanguage_score().getType() + " " + i.getLanguage_score().getScore());
@@ -76,9 +59,17 @@ public class Requirement_data {
 			System.out.println(i.getConsult_cnt() + " " + i.getMajor() + " " + i.getTrack() + " " + i.getIn_year());
 		}
 	}
+
+	public boolean deleteRequirement(int index) {
+		if (0 <= index && index < requirement.size()) {
+			requirement.remove(index);
+			this.FileSave();
+			return true;
+		}
+		return false;
+	}
 	
-	public void deleteRequirement(int index) {
-		requirement.remove(index);
+	public void FileSave() {
 		try {
 			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Requirement.dat"));
 			ostream.writeObject(requirement);

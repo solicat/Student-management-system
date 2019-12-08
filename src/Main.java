@@ -149,6 +149,10 @@ public class Main {
 
 		Notice_data data = new Notice_data();
 		data.openNotice();
+		Notice a = new Notice("modify test","modify test","modify test");
+		a.delete_notice();
+		
+//		data.modifyNotice(4, "modify test", "modify test", "modify test");
 		
 		Requirement_data requirement = new Requirement_data();
 		requirement.openRequirement();  // open from file(Requirement.dat)
