@@ -8,6 +8,7 @@ import pd.student_data.Student;
 
 public class Account_data {
 	private static ArrayList<Account> account;
+	private static Account current;
 	
 	public void openAccount(){
 		try {
@@ -68,9 +69,11 @@ public class Account_data {
 		for(Account a : account) {
 			if(a.getID().equals(id) && a.getPW().equals(pw)){
 				if(a.getUser() instanceof Student) {
+					current = a;
 					return 1;	// Student login
 				}
 				if(a.getUser() instanceof Administrator) {
+					current = a;
 					return 2;	// Administrator login
 				}
 			}
