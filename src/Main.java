@@ -43,8 +43,8 @@ public class Main {
 		Student1.setName("Student 1");
 		Student1.setStudent_number("2020123456");
 		Student1.setPhone_number("010-2345-6789");
-		Student1.setCourse("ê¸€ë¡œë²Œì†Œí”„íŠ¸ì›¨ì–´");
-		Student1.setTrack("ê¸€ë¡œë²Œì†Œí”„íŠ¸ì›¨ì–´ í•™ì„ì‚¬ì—°ê³„");
+		Student1.setCourse("±Û·Î¹ú¼ÒÇÁÆ®¿ş¾î");
+		Student1.setTrack("±Û·Î¹ú¼ÒÇÁÆ®¿ş¾î ÇĞ¼®»ç¿¬°è");
 		Student1.setProfessor("abc");
 		
 		stu1.setExchange(fe_Stu1);
@@ -63,8 +63,8 @@ public class Main {
 		Student2.setName("Student 2");
 		Student2.setStudent_number("2020567890");
 		Student2.setPhone_number("010-9876-5432");
-		Student2.setCourse("ì‹¬í™”ì»´í“¨í„°");
-		Student2.setTrack("ì‹¬í™”ì»´í“¨í„°");
+		Student2.setCourse("½ÉÈ­ÄÄÇ»ÅÍ");
+		Student2.setTrack("½ÉÈ­ÄÄÇ»ÅÍ");
 		Student2.setProfessor("abc");
 		
 		stu2.setExchange(fe_Stu2);

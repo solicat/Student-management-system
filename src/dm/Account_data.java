@@ -81,6 +81,10 @@ public class Account_data {
 		return 0;	// Login fail
 	}
 	
+	public static Account getCurrentAccount() {
+		return current;
+	}
+	
 	public void FileSave() {
 		try {
 			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("Account.dat"));

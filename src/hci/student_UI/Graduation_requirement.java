@@ -6,8 +6,11 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import dm.Requirement_data;
+import dm.Account_data;
 import pd.management.Requirement;
 import pd.student_data.Subject;
+import pd.student_data.Student;
+import pd.student_data.Career;
 
 public class Graduation_requirement extends JFrame{
 
@@ -33,7 +36,10 @@ public class Graduation_requirement extends JFrame{
 			ArrayList<Requirement> requirement = data.get_Requirement();
 			Requirement check = null;
 			
-			String track = "글로벌소프트웨어 학석사연계"; //Student에서 track 가져오는 부분 구현 필요, 정확한 String 형식?
+			Student current = (Student) Account_data.getCurrentAccount().getUser();
+			Career std_carrer = current.getCareer();
+			
+			String track = current.getTrack();
 			
 			//String track -> requirement
 			if(track.equals("심화컴퓨터")) {
@@ -73,6 +79,7 @@ public class Graduation_requirement extends JFrame{
 				}
 			}
 			
+					
 			//panel
 			JPanel requirePanel = new JPanel();
 			requirePanel.setLayout(new GridLayout(15, 1)); //최대 필수과목 수에 따라 조정 필요
@@ -105,6 +112,9 @@ public class Graduation_requirement extends JFrame{
 			requirePanel.setBackground(Color.WHITE);
 			
 			contentPane.add(requirePanel);
+			
+			System.out.println("		학생경력	졸업조건	달성여부");
+
 			
 			setSize(300, 500);
 			setVisible(true); // 화면에 프레임 출력
