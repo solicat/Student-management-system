@@ -27,6 +27,6 @@ public class Language_score implements Serializable{
 		this.score = score;
 	}
 	public String toString(){
-		return "Type: " + this.type + "Score: " + this.score;
+		return "Type: " + this.type + " Score: " + this.score;
 	}
 }

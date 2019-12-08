@@ -40,6 +40,6 @@ public class Subject implements Serializable{
 		this.prof_name = prof_name;
 	}
 	public String toString(){
-		return "Grade: " + this.grade + "Code: " + this.code + "Course: " + this.course_name + "Prof: " + this.prof_name;
+		return "Grade: " + this.grade + " Code: " + this.code + " Course: " + this.course_name + " Prof: " + this.prof_name;
 	}
 }

@@ -37,6 +37,6 @@ public class Foriegn_exchange implements Serializable{
 	}
 	
 	public String toString(){
-		return "Country: " + this.country_name + "Univ name: " + this.univ_name + "Credit: " + this.credit; 
+		return "Country: " + this.country_name + " Univ name: " + this.univ_name + "Credit: " + this.credit; 
 	}
 }
