@@ -34,5 +34,7 @@ public class Intern implements Serializable{
 	public void setCredit(int credit) {
 		this.credit = credit;
 	}
-	
+	public String toString(){
+		return "Company: " + this.company_name + "Period: " + this.period + "Credit: " + this.credit;
+	}
 }
