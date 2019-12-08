@@ -43,13 +43,17 @@ public class Main {
 		Student1.setName("Student 1");
 		Student1.setStudent_number("2020123456");
 		Student1.setPhone_number("010-2345-6789");
-		Student1.setCourse("ê¸€ë¡œë²Œì†Œí”„íŠ¸ì›¨ì–´");
-		Student1.setTrack("ê¸€ë¡œë²Œì†Œí”„íŠ¸ì›¨ì–´ í•™ì„ì‚¬ì—°ê³„");
+		Student1.setCourse("±Û·Î¹ú¼ÒÇÁÆ®¿ş¾î");
+		Student1.setTrack("±Û·Î¹ú¼ÒÇÁÆ®¿ş¾î ÇĞ¼®»ç¿¬°è");
 		Student1.setProfessor("abc");
 		
+		fe_Stu1.add(new Foriegn_exchange("", "", 0));
 		stu1.setExchange(fe_Stu1);
+		int_Stu1.add(new Intern("", 0, 0));
 		stu1.setIntern(int_Stu1);
+		lan_Stu1.add(new Language_score("TOEIC", 650));
 		stu1.setEng_grade(lan_Stu1);
+		
 		stu1.setSubject(sub_Stu1);
 		
 		Student1.setCareer(stu1);	
@@ -63,13 +67,17 @@ public class Main {
 		Student2.setName("Student 2");
 		Student2.setStudent_number("2020567890");
 		Student2.setPhone_number("010-9876-5432");
-		Student2.setCourse("ì‹¬í™”ì»´í“¨í„°");
-		Student2.setTrack("ì‹¬í™”ì»´í“¨í„°");
+		Student2.setCourse("½ÉÈ­ÄÄÇ»ÅÍ");
+		Student2.setTrack("½ÉÈ­ÄÄÇ»ÅÍ");
 		Student2.setProfessor("abc");
 		
+		fe_Stu2.add(new Foriegn_exchange("", "", 0));
 		stu2.setExchange(fe_Stu2);
+		int_Stu2.add(new Intern("", 0, 0));
 		stu2.setIntern(int_Stu2);
+		lan_Stu2.add(new Language_score("TOEIC", 750));
 		stu2.setEng_grade(lan_Stu2);
+
 		stu2.setSubject(sub_Stu2);
 		
 		Student2.setCareer(stu2);			
@@ -93,7 +101,7 @@ public class Main {
 		
 		ArrayList<Subject> trk0_req = new ArrayList<Subject>();
 		
-		trk0_req.add(new Subject("", "CLTR221", "", ""));
+		trk0_req.add(new Subject("", "CLTR211", "", ""));
 		trk0_req.add(new Subject("", "CLTR213", "", ""));
 		trk0_req.add(new Subject("", "CLTR223", "", ""));
 		trk0_req.add(new Subject("", "COME301", "", ""));

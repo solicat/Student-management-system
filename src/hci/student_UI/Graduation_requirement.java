@@ -6,8 +6,14 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import dm.Requirement_data;
+import dm.Account_data;
 import pd.management.Requirement;
 import pd.student_data.Subject;
+import pd.student_data.Student;
+import pd.student_data.Career;
+import pd.student_data.Language_score;
+import pd.student_data.Intern;
+import pd.student_data.Foriegn_exchange;
 
 public class Graduation_requirement extends JFrame{
 
@@ -33,7 +39,10 @@ public class Graduation_requirement extends JFrame{
 			ArrayList<Requirement> requirement = data.get_Requirement();
 			Requirement check = null;
 			
-			String track = "글로벌소프트웨어 학석사연계"; //Student에서 track 가져오는 부분 구현 필요, 정확한 String 형식?
+			Student current = (Student) Account_data.getCurrentAccount().getUser();
+			Career std_career = current.getCareer();
+			
+			String track = current.getTrack();
 			
 			//String track -> requirement
 			if(track.equals("심화컴퓨터")) {
@@ -73,6 +82,7 @@ public class Graduation_requirement extends JFrame{
 				}
 			}
 			
+					
 			//panel
 			JPanel requirePanel = new JPanel();
 			requirePanel.setLayout(new GridLayout(15, 1)); //최대 필수과목 수에 따라 조정 필요
@@ -105,6 +115,66 @@ public class Graduation_requirement extends JFrame{
 			requirePanel.setBackground(Color.WHITE);
 			
 			contentPane.add(requirePanel);
+			
+			
+			
+			
+			System.out.println("학생경력	졸업조건	달성여부");
+			System.out.print("언어 점수: ");
+			for(Language_score i : std_career.getEng_grade()) {
+				System.out.print(i + "\n	" + check.getLanguage_score());
+				if(i.getType().equals(check.getLanguage_score().getType()) && i.getScore() >= check.getLanguage_score().getScore())
+					System.out.println(" OK");
+				else
+					System.out.println(" NO");
+			}
+			
+			System.out.print("해외 교환 학생: ");
+			for(Foriegn_exchange i : std_career.getExchange()) {
+				System.out.print(i + "\n	" + check.getForiegn_exchange());
+				if(i.getCredit() >= check.getForiegn_exchange().getCredit())
+					System.out.println(" OK");
+				else
+					System.out.println(" NO");
+			}
+			
+			System.out.print("인턴: ");
+			for(Intern i : std_career.getIntern()) {
+				System.out.print(i + "\n	" + check.getIntern());
+				if(i.getCredit() >= check.getIntern().getCredit())
+					System.out.println(" OK");
+				else
+					System.out.println(" NO");
+			}
+			
+			System.out.print("필수과목: ");
+			for(Subject i : std_career.getSubject()) {
+				System.out.print(i + "\n	");				
+			}
+			System.out.println("\n");
+			for(Subject i : check.getEssential_subject()) {
+				Integer ck = 0;
+				System.out.print("	" + i.getCode() + ": ");
+				for(Subject j : std_career.getSubject()) {
+					if(i.getCode().equals(j.getCode())) {
+						System.out.println(" OK");
+						ck = 1;
+					}
+				}
+				if(ck == 0)	System.out.println(" NO");
+			}
+			
+			System.out.print("상담횟수: ");
+			System.out.println(std_career.getCount_counseling() + " " +  check.getConsult_cnt());
+			if(std_career.getCount_counseling() >= check.getConsult_cnt())
+				System.out.println(" OK");
+			else
+				System.out.println(" NO");
+			
+			
+			
+			
+			
 			
 			setSize(300, 500);
 			setVisible(true); // 화면에 프레임 출력
