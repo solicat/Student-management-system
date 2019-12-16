@@ -6,6 +6,7 @@ import hci.student_UI.*;
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.JPasswordField;
 
 import dm.Account_data;
 
@@ -58,7 +59,10 @@ public class login extends JFrame implements ActionListener
 		JPanel PWPanel = new JPanel();
 		//PWPanel.setBackground(Color.WHITE);		
 		
-		PW = new JTextField(NUMBER_OF_CHAR);
+		//PW = new JTextField(NUMBER_OF_CHAR);
+		PW = new JPasswordField(NUMBER_OF_CHAR);
+		((JPasswordField) PW).setEchoChar('*');
+		
 		JLabel PWLabel = new JLabel("PW : ");
 		PWPanel.add(PWLabel, BorderLayout.CENTER);
 		PWPanel.add(PW, BorderLayout.CENTER);
