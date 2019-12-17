@@ -18,6 +18,8 @@ import pd.student_data.Foriegn_exchange;
 public class Graduation_requirement extends JFrame{
 
 		public Graduation_requirement() {
+			
+			
 
 			setTitle("졸업 요건 조회"); // 프레임의 타이틀달기
 			//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -186,19 +188,31 @@ public class Graduation_requirement extends JFrame{
 				col = 0;
 			}			
 			
+			
 			JPanel requirePanel3 = new JPanel();
 			requirePanel3.setLayout(new BorderLayout());
+			JLabel subjectLabel3 = new JLabel("이수과목");
 			//수강정보
 			String[] columns3 = new String[] {
-					"강의수강정보"
-			};
-			Object[][] infoTable = new Object[8][1];
+					"성적", "과목코드", "과목", "교수"
+			};			
+			Object[][] infoTable = new Object[8][4];
 			JTable info = new JTable(infoTable,columns3);
+			info.getColumn("성적").setPreferredWidth(100);
+			info.getColumn("과목코드").setPreferredWidth(150);
+			info.getColumn("과목").setPreferredWidth(200);
 			JScrollPane scroll3 = new JScrollPane(info);
+			scroll3.setPreferredSize(new Dimension(300, 120));
+			requirePanel3.add(subjectLabel3, BorderLayout.NORTH);
 			requirePanel3.add(scroll3, BorderLayout.CENTER);
 			row = 0; col = 0;
 			for(Subject i : std_career.getSubject()) {
-				infoTable[row++][col] = i;
+				infoTable[row][col++] = i.getGrade();
+				infoTable[row][col++] = i.getCode();
+				infoTable[row][col++] = i.getCourse_name();
+				infoTable[row][col++] = i.getProf_name();				
+				col = 0;
+				row++;
 			}
 			
 			trk_p.setLocation(20, 15);
