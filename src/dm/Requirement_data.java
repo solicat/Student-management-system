@@ -2,7 +2,9 @@ package dm;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
+import pd.management.Notice;
 import pd.management.Requirement;
 import pd.student_data.Foriegn_exchange;
 import pd.student_data.Intern;
@@ -11,6 +13,9 @@ import pd.student_data.Subject;
 
 public class Requirement_data {
 	private static ArrayList<Requirement> requirement;
+	public static ArrayList<Requirement> getList(){
+		return requirement;
+	}
 
 	public void openRequirement() {
 		try {
@@ -35,6 +40,19 @@ public class Requirement_data {
 		requirement.add(req);
 		this.FileSave();
 		return true;
+	}
+	
+	public static Requirement getRequireByTrack(String trk) {
+		String[] track = new String[] {
+				"심화컴퓨터", "글로벌소프트웨어 다중전공", "글로벌소프트웨어 해외복수학위", "글로벌소프트웨어 학석사연계", "SW 연계 융합"
+		};
+		
+		for(Requirement a : requirement) {
+			if(a.getTrack() == Arrays.asList(track).indexOf(trk))
+				return a;
+		}
+		
+		return null;
 	}
 
 	public boolean modifyRequirement(Requirement req, int index) {

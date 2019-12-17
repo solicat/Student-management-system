@@ -13,7 +13,8 @@ import pd.student_data.*;
 public class Main {
 
 	public static void main(String[] args) {
-	
+		
+		// 초기 정보를 저장한 파일을 만들기 위한 내용.
 		/*ArrayList<Account> iaccount = new ArrayList<Account>();
 
 		iaccount.add(new Account("0000000000", "qwer", new Student()));
@@ -35,10 +36,10 @@ public class Main {
 		ArrayList<Subject> sub_Stu1 = new ArrayList<Subject>();
 		ArrayList<Subject> sub_Stu2 = new ArrayList<Subject>();
 		
-		sub_Stu1.add(new Subject("A+", "COMP204", "Programming Basics", "abc"));
-		sub_Stu1.add(new Subject("A+", "COME331", "Data Structure", "abc"));
-		sub_Stu1.add(new Subject("A+", "CLTR211", "Math1", "abc"));
-		sub_Stu1.add(new Subject("A+", "COME301", "Discrete Mathematics", "abc"));
+		sub_Stu1.add(new Subject("A+", "COMP204", "기초프로그래밍", "abc"));
+		sub_Stu1.add(new Subject("A+", "COME331", "자료구조", "abc"));
+		sub_Stu1.add(new Subject("A+", "CLTR211", "수학1", "abc"));
+		sub_Stu1.add(new Subject("A+", "COME301", "이산수학", "abc"));
 		
 		Student1.setName("Student 1");
 		Student1.setStudent_number("2020123456");
@@ -59,10 +60,10 @@ public class Main {
 		Student1.setCareer(stu1);	
 		
 				
-		sub_Stu2.add(new Subject("A+", "CLTR264", "Social Network", "abc"));
-		sub_Stu2.add(new Subject("A+", "CLTR211", "Math1", "abc"));
-		sub_Stu2.add(new Subject("A+", "CLTR213", "Physics1", "abc"));
-		sub_Stu2.add(new Subject("A+", "CLTR223", "Physics Experiment", "abc"));
+		sub_Stu2.add(new Subject("A+", "CLTR264", "소셜네트워크", "abc"));
+		sub_Stu2.add(new Subject("A+", "CLTR211", "수학1", "abc"));
+		sub_Stu2.add(new Subject("A+", "CLTR213", "물리학1", "abc"));
+		sub_Stu2.add(new Subject("A+", "CLTR223", "물리학실험1", "abc"));
 		
 		Student2.setName("Student 2");
 		Student2.setStudent_number("2020567890");
@@ -101,20 +102,20 @@ public class Main {
 		
 		ArrayList<Subject> trk0_req = new ArrayList<Subject>();
 		
-		trk0_req.add(new Subject("", "CLTR211", "", ""));
-		trk0_req.add(new Subject("", "CLTR213", "", ""));
-		trk0_req.add(new Subject("", "CLTR223", "", ""));
-		trk0_req.add(new Subject("", "COME301", "", ""));
-		trk0_req.add(new Subject("", "COMP205", "", ""));
-		trk0_req.add(new Subject("", "COMP204", "", ""));
-		trk0_req.add(new Subject("", "COME331", "", ""));
-		trk0_req.add(new Subject("", "COMP217", "", ""));
-		trk0_req.add(new Subject("", "ELEC462", "", ""));
-		trk0_req.add(new Subject("", "COMP411", "", ""));
-		trk0_req.add(new Subject("", "COMP319", "", ""));
-		trk0_req.add(new Subject("", "COMP312", "", ""));
-		trk0_req.add(new Subject("", "ITEC401", "", ""));
-		trk0_req.add(new Subject("", "ITEC402", "", ""));
+		trk0_req.add(new Subject("", "CLTR211", "수학1", ""));
+		trk0_req.add(new Subject("", "CLTR213", "물리학1", ""));
+		trk0_req.add(new Subject("", "CLTR223", "물리학실험1", ""));
+		trk0_req.add(new Subject("", "COME301", "이산수학", ""));
+		trk0_req.add(new Subject("", "COMP205", "기초창의공학설계", ""));
+		trk0_req.add(new Subject("", "COMP204", "프로그래밍기초", ""));
+		trk0_req.add(new Subject("", "COME331", "자료구조", ""));
+		trk0_req.add(new Subject("", "COMP217", "자바프로그래밍", ""));
+		trk0_req.add(new Subject("", "ELEC462", "시스템프로그래밍", ""));
+		trk0_req.add(new Subject("", "COMP411", "컴퓨터구조", ""));
+		trk0_req.add(new Subject("", "COMP319", "알고리즘1", ""));
+		trk0_req.add(new Subject("", "COMP312", "운영체제", ""));
+		trk0_req.add(new Subject("", "ITEC401", "종합설계프로젝트1", ""));
+		trk0_req.add(new Subject("", "ITEC402", "종합설계프로젝트2", ""));
 		
 		trk0.setLanguage_score(new Language_score("TOEIC", 700));
 		trk0.setIntern(new Intern("", 0, 3));
@@ -129,10 +130,10 @@ public class Main {
 		
 		ArrayList<Subject> trk3_req = new ArrayList<Subject>();		
 				
-		trk3_req.add(new Subject("", "COMP204", "", ""));
-		trk3_req.add(new Subject("", "COME331", "", ""));
-		trk3_req.add(new Subject("", "GLSO216", "", ""));
-		trk3_req.add(new Subject("", "COMP312", "", ""));
+		trk3_req.add(new Subject("", "COMP204", "프로그래밍기초", ""));
+		trk3_req.add(new Subject("", "COME331", "자료구조", ""));
+		trk3_req.add(new Subject("", "GLSO216", "알고리즘실습", ""));
+		trk3_req.add(new Subject("", "COMP312", "운영체제", ""));
 		
 		trk3.setLanguage_score(new Language_score("TOEIC", 700));
 		trk3.setForiegn_exchange(new Foriegn_exchange("", "", 6));
@@ -149,8 +150,8 @@ public class Main {
 		} catch (IOException e) {
 			System.out.println("Problem with file output.");
 		}		
-		
 		*/
+		
 
 		Account_data account = new Account_data();
 		account.openAccount();

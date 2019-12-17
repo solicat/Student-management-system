@@ -16,7 +16,7 @@ public class Graduation_requirement_c extends JFrame{
 		contentPane.setLayout(null); 	// Layout을 정하지 않기	
 										// 절대적 위치를 지정해 주기 위해
 		
-		JLabel label = new JLabel("졸업 요건 수정");
+		JLabel label = new JLabel("졸업 요건 추가");
 		label.setLocation(80,50);
 		label.setSize(140, 60);
 		label.setHorizontalAlignment(JLabel.CENTER);
@@ -24,8 +24,8 @@ public class Graduation_requirement_c extends JFrame{
 		
 		// 메뉴 안에 들어갈 버튼
 		JButton button1 = new JButton("졸업요건 내용");
-		JButton button2 = new JButton("저장");
-		JButton button3 = new JButton("삭제");
+		JButton button2 = new JButton("추가");
+		JButton button3 = new JButton("취소");
 		
 		button1.setLocation(80,140);
 		button1.setSize(140, 60);

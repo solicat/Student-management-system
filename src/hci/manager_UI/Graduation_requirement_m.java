@@ -2,13 +2,15 @@ package hci.manager_UI;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 
 import hci.manager_UI.Graduation_requirement_c;
 import hci.manager_UI.Graduation_requirement_i;
-
-//import manager_UI.Manager_menu.MyActionListener1;
-//import manager_UI.Manager_menu.MyActionListener2;
+import hci.manager_UI.Notice_m.MyActionListener2;
+import dm.Requirement_data;
+import pd.management.Requirement;
 
 public class Graduation_requirement_m extends JFrame{
 
@@ -23,25 +25,33 @@ public class Graduation_requirement_m extends JFrame{
 		contentPane.setLayout(null); 	// Layout을 정하지 않기	
 										// 절대적 위치를 지정해 주기 위해
 		
-		JLabel label = new JLabel("졸업 요건 관리");
+		JLabel label = new JLabel("졸업 요건 목록");
 		label.setLocation(80,50);
 		label.setSize(140, 60);
 		label.setHorizontalAlignment(JLabel.CENTER);
 		contentPane.add(label);
 		
 		// 메뉴 안에 들어갈 버튼
-		JButton button1 = new JButton("트랙별 졸업요건");
-		JButton button2 = new JButton("졸업요건 추가");
+		String[] track = new String[] {
+				"심화컴퓨터", "글로벌소프트웨어 다중전공", "글로벌소프트웨어 해외복수학위", "글로벌소프트웨어 학석사연계", "SW 연계 융합"
+		};
+		JPanel panel1 = new JPanel();
+		ArrayList<Requirement> require = Requirement_data.getList();
+		JButton[] btn = new JButton[require.size()];
+		panel1.setLayout(new GridLayout(require.size(), 1));
+		for(int i = 0; i < require.size(); i++) {
+			btn[i] = new JButton(track[require.get(i).getTrack()]);
+			btn[i].addActionListener(new MyActionListener1());
+			panel1.add(btn[i]);
+		}
+		panel1.setLocation(20, 140);
+		panel1.setSize(250, 20*require.size());
+		contentPane.add(panel1);
 		
-		button1.setLocation(80,140);
-		button1.setSize(140, 60);
-		contentPane.add(button1);
-		
-		button2.setLocation(80,220);
-		button2.setSize(140, 60);
+		JButton button2 = new JButton("추가");
+		button2.setLocation(110,350);
+		button2.setSize(80, 20);
 		contentPane.add(button2);
-		
-		button1.addActionListener(new MyActionListener1());
 		button2.addActionListener(new MyActionListener2());
 		
 		setSize(300, 500); // 프레임 크기 300x150 설정
@@ -56,11 +66,13 @@ public class Graduation_requirement_m extends JFrame{
 	}
  * */
 
-	class MyActionListener1 implements ActionListener{
-		@Override
+	class MyActionListener1 implements ActionListener{		
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			new Graduation_requirement_c();
+			JButton btn = (JButton) e.getSource();
+			String title = btn.getActionCommand();
+
+			new Graduation_requirement_i(title);
 		}	
 	}
 	
@@ -68,7 +80,7 @@ public class Graduation_requirement_m extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			new Graduation_requirement_i();
+			new Graduation_requirement_c();
 		}	
 	}
 

@@ -156,10 +156,10 @@ public class Graduation_requirement extends JFrame{
 			
 			//필수과목 table
 			String[] columns2 = new String[] {
-					"과목코드","수강여부"
+					"과목코드", "과목", "수강여부"
 			};
 			
-			Object[][] subjectTable = new Object[15][2];
+			Object[][] subjectTable = new Object[15][3];
 			
 			JTable table2 = new JTable(subjectTable, columns2);
 			JScrollPane scroll2 = new JScrollPane(table2);
@@ -175,6 +175,7 @@ public class Graduation_requirement extends JFrame{
 			for(Subject i : check.getEssential_subject()) {
 				Integer ck = 0;
 				subjectTable[row][col++] = i.getCode();
+				subjectTable[row][col++] = i.getCourse_name();
 				for(Subject j : std_career.getSubject()) {
 					if(i.getCode().equals(j.getCode())) {
 						subjectTable[row][col] = "OK";
