@@ -63,7 +63,10 @@ public class Notice_data {
 	public boolean modifyNotice(int index, String type, String title, String content) {
 		if(0<=index && index<this.getList().size())
 		{
-			this.getList().set(index, new Notice(type,title,content));
+			Notice target = notice.get(index);
+			target.setType(type);
+			target.setTitle(title);
+			target.setContent(content);
 			this.FileSave();
 			return true;
 		}

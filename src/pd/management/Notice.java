@@ -28,7 +28,7 @@ public class Notice implements Serializable{
 	{
 		Notice_data data = new Notice_data();
 		if(data.createNotice(type, title, content)) {
-			System.out.println("Success: Creating notice");
+			//System.out.println("Success: Creating notice");
 		}
 	}
 	
@@ -39,7 +39,7 @@ public class Notice implements Serializable{
 		for(Notice a : data.getList()) {
 			if(a.getType().equals(this.getType()) && a.getTitle().equals(this.getTitle()) && a.getContent().equals(this.getContent())) {
 				data.deleteNotice(data.getList().indexOf(a));
-				System.out.println("Success: Deleting notice");
+				//System.out.println("Success: Deleting notice");
 				flag = true;
 				break;
 			}
@@ -52,12 +52,12 @@ public class Notice implements Serializable{
 		
 	}
 	
-	public void modify_notice() 
+	public void modify_notice(int index) 
 	{
-/*		Notice_data data = new Notice_data();
-		if(data.modifyNotice()) {
+		Notice_data data = new Notice_data();
+		if(data.modifyNotice(index, type, title, content)) {
 			System.out.println("Success: Modifying notice");
-	}*/
+		}
 	}
 	//public static void main(String[] args) {		
 		

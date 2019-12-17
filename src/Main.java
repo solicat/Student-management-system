@@ -150,8 +150,29 @@ public class Main {
 		} catch (IOException e) {
 			System.out.println("Problem with file output.");
 		}		
-		*/
 		
+		
+		ArrayList<Notice> inotice = new ArrayList<Notice>();
+		inotice.add(new Notice("typeA", "test1", "first test"));
+		inotice.add(new Notice("typeB", "test2", "second test"));
+		inotice.add(new Notice("typeC", "test3", "third test"));
+		inotice.add(new Notice("typeD", "test4", "forth test"));
+		inotice.add(new Notice("typeE", "test5", "fifth test"));
+		inotice.add(new Notice("typeF", "test6", "sixth test"));
+		inotice.add(new Notice("test type", "공지사항 추가 테스트", "공지사항 추가 테스트."
+				+ "해당 내용이 파일에 정상적으로 출력되는지 확인."
+				+ "추가 버튼 클릭시 추가 성공 알림 화면이 뜨는지 확인."));
+		inotice.add(new Notice("테스트", "공지사항 삭제 테스트", "테스트"));
+		inotice.add(new Notice("test", "공지사항 수정 테스트", "수정해보세요"));
+		
+		try {
+			ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("notice.dat"));
+			ostream.writeObject(inotice);
+			ostream.close();
+		} catch (IOException e) {
+			System.out.println("Problem with file output.");
+		}	
+		*/
 
 		Account_data account = new Account_data();
 		account.openAccount();
