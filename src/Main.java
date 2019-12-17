@@ -14,7 +14,7 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-		ArrayList<Account> iaccount = new ArrayList<Account>();
+		/*ArrayList<Account> iaccount = new ArrayList<Account>();
 
 		iaccount.add(new Account("0000000000", "qwer", new Student()));
 		iaccount.add(new Account("1111111111", "asdf", new Student()));
@@ -150,18 +150,14 @@ public class Main {
 			System.out.println("Problem with file output.");
 		}		
 		
-		
+		*/
 
 		Account_data account = new Account_data();
 		account.openAccount();
 
 		Notice_data data = new Notice_data();
 		data.openNotice();
-		Notice a = new Notice("modify test","modify test","modify test");
-		a.delete_notice();
-		
-//		data.modifyNotice(4, "modify test", "modify test", "modify test");
-		
+					
 		Requirement_data requirement = new Requirement_data();
 		requirement.openRequirement();  // open from file(Requirement.dat)
 		

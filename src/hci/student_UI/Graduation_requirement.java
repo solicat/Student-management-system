@@ -76,6 +76,10 @@ public class Graduation_requirement extends JFrame{
 				}
 			}			
 			
+			JPanel trk_p = new JPanel();
+			JLabel trk_l = new JLabel(track);
+			trk_p.add(trk_l);
+			
 			//headers for the table
 			String[] columns = new String[] {
 					"종류", "학생경력", "졸업요건", "달성여부"
@@ -153,7 +157,7 @@ public class Graduation_requirement extends JFrame{
 					"과목코드","수강여부"
 			};
 			
-			Object[][] subjectTable = new Object[8][2];
+			Object[][] subjectTable = new Object[15][2];
 			
 			JTable table2 = new JTable(subjectTable, columns2);
 			JScrollPane scroll2 = new JScrollPane(table2);
@@ -173,9 +177,11 @@ public class Graduation_requirement extends JFrame{
 					if(i.getCode().equals(j.getCode())) {
 						subjectTable[row][col] = "OK";
 						ck = 1;
+						break;
 					}
 				}
-				subjectTable[row][col] = "NO";
+				if(ck != 1)
+					subjectTable[row][col] = "NO";
 				row++;
 				col = 0;
 			}			
@@ -195,6 +201,10 @@ public class Graduation_requirement extends JFrame{
 				infoTable[row++][col] = i;
 			}
 			
+			trk_p.setLocation(20, 15);
+			trk_p.setSize(600, 30);
+			trk_p.setBackground(Color.WHITE);
+			
 			requirePanel.setLocation(20, 45);
 			requirePanel.setSize(600, 150);
 			requirePanel.setBackground(Color.WHITE);
@@ -206,7 +216,8 @@ public class Graduation_requirement extends JFrame{
 			requirePanel3.setLocation(20, 370);
 			requirePanel3.setSize(600, 150);
 			requirePanel3.setBackground(Color.WHITE);
-			
+
+			contentPane.add(trk_p);
 			contentPane.add(requirePanel);
 			contentPane.add(requirePanel2);
 			contentPane.add(requirePanel3);
